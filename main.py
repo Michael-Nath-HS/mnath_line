@@ -27,12 +27,24 @@ def draw_nucler_plant(start_one, start_two, end_one):
     draw_line(start_one + 30, end_one, start_one + 40, end_one + 10, s, p)
     draw_line(start_one - 20, end_one + 10, start_one + 40, end_one + 10, s, p)
 
+    #shading in colors
+    p = [186, 6, 0]
+    for i in range(1, 10):
+        draw_line(start_one - 20 + i, end_one + 10- i, start_one + 40 - i, end_one + 10 - i, s, p)
+    p = [215, 196, 31]
+    for i in range(1, int(end_one - (start_two + 30))):
+        draw_line(start_one - 10, end_one - i, start_one + 30, end_one - i, s, p)
+    p = [0, 0, 0]
+    for i in range(1, (start_two + 30) - 10):
+        draw_line(start_one - 10 - i, start_two + 30 - i, start_one + 30 + i, start_two + 30 - i, s, p)
     p = [148, 156, 161]
     #smoke
     for i in range(0, 10, 2):
         for j in range(0, 10):
             plot(s, p, start_one + 10 + j, end_one + 15 + i)
             plot(s, p, start_one + 10 - j, end_one + 15 + i)
+            p = [148, 156, 161]
+
     
 
 
